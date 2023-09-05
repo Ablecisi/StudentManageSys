@@ -7,10 +7,15 @@ import java.util.Scanner;
 public class Regist extends Login{
     public static void Regis() {
         Regist log = new Regist();
+        DataComparison dataComparison = new DataComparison();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("请输入注册账号：");
-        String user_id = sc.next();
+        String user_name = sc.next();
+        if (dataComparison.compareDataWithDatabase("user",user_name,"user_name")) {
+            System.out.println("该账号已存在，请重新输入！");
+            Regist.Regis();
+        }
         System.out.println("请输入密码：");
         String password = sc.next();
         System.out.println("请再次输入密码：");
@@ -21,11 +26,8 @@ public class Regist extends Login{
             System.out.println("请输入正确的手机号码！");
             Regis();
         }
-
         if (password.equals(password1)) {
-            if (true) {
-                log.regist(user_id, password, phoneNum );
-            }
+            log.regist(user_name, password, phoneNum);
             System.out.println("注册成功！");
         } else {
             System.out.println("两次密码输入不一致，请重新输入！");
@@ -40,13 +42,16 @@ public class Regist extends Login{
         try {
             Class.forName(getJDBC_DRIVER());
             co = DriverManager.getConnection(getDB_URL(), getUSER(), getPASS());
+
             String user_id = String.valueOf((int)(Math.random()*(1000000000)));
             //String user_id = String.valueOf((r.longs()));
-            if (dataComparison.compareDataWithDatabase(user_id)) {
-                user_id = String.valueOf((int)(Math.random()*(1000000000-999999999)+999999999));
+            if (dataComparison.compareDataWithDatabase("user", user_id, "user_id")) {
+                user_id = String.valueOf((int)(Math.random()*1000000000));
                 //user_id = String.valueOf((r.longs()));
             }
-            String sql = ("INSERT INTO stm_sys.user (user_id, user_name, password, phoneNum)  VALUES (" + "'" +user_id+ "'" + ", " + "'" +user_name+"'" +", " +"'"+password+"'"+ ", " +"'" +phoneNum+ "'"+")" );
+
+            String sql = ("INSERT INTO stm_sys.user (user_id, user_name, password, phoneNum)  " +
+                    "VALUES (" + "'" +user_id+ "'" + ", "+ "'"+user_name+"'" +", " +"'"+password+"'"+ ", " +"'" +phoneNum+ "'"+")" );
             //System.out.println(sql);测试
             prs = co.prepareStatement(sql);
             prs.executeUpdate();

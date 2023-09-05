@@ -1007,8 +1007,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="291" parent="1" name="stm_sys">
-      <IntrospectionTimestamp>2023-09-04.05:11:18</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-09-03.13:11:18</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-09-04.07:40:02</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-09-03.15:40:02</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="292" parent="1" name="mysql.infoschema">

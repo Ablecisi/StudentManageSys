@@ -18,7 +18,6 @@ public class st_system {
             System.out.println("=============================");
             System.out.println("请选择端：");
             String input = scanner.nextLine();
-
             switch (input) {
                 case "1" -> {
                     do {
@@ -39,7 +38,7 @@ public class st_system {
                                 System.out.println("=添加学生信息页面=");
                                 System.out.println("===============");
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-                                //addStudent(WLW);
+                                AddStudents.addstudent();
                             }//添加学生
                             case "2" -> {
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/ /*菜单*/
@@ -82,13 +81,16 @@ public class st_system {
                                 // (WLW);//查询学生考试信息
                             }
                             case "7" -> {
-                                return;
+                                System.out.println("已退至菜单");
                             }default -> System.out.println("输出错误，请重新输入！");
 
                         }
                     } while (!input.equals("7"));
                 }
                 case "2" -> System.out.println("\n      --系统还未开发--\n\n");
+                case "3" -> {
+                    return;
+                }
                 default -> System.out.println("输出错误，请重新输入！");
             }
         } while (true);

@@ -13,7 +13,7 @@ public class DataComparison {
 //        compareDataWithDatabase(inputData);
 //    }
 
-    public boolean compareDataWithDatabase(String inputData) {
+    public boolean compareDataWithDatabase(String table, String inputData,String id) {
         String databaseUrl = "jdbc:mysql://localhost:3306";
         String username = "root";
         String password = "root";
@@ -27,7 +27,7 @@ public class DataComparison {
             connection = DriverManager.getConnection(databaseUrl, username, password);
 
             // 2. 编写一个查询，用于根据输入数据fetch数据库中的数据
-            String query = "SELECT * FROM stm_sys.user WHERE user_id = ?";
+            String query = "SELECT * FROM stm_sys." + table +" WHERE "+ id + "= ?";
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, inputData);
 
