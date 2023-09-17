@@ -59,7 +59,8 @@ public class AddStudents {
             class_id = String.valueOf((int)(Math.random()*100000));
             //user_id = String.valueOf((r.longs()));
         }
-        String sql = "insert into stm_sys.student(student_id, student_name, gender, age, class_id, class_name) VALUES (" + "'" +stu_id+ "'" + ", "+ "'"+stu_name+"'" +", " +"'"+stu_sex+"'"+ ", " +"'" +stu_age+ "'"+", " +"'" +class_id+ "'"+ ", " +"'" +stu_class+ "'"+ ")";
+        String sql = "insert into stm_sys.student(student_id, student_name, gender, age, class_id, class_name) " +
+                "VALUES (" + "'" +stu_id+ "'" + ", "+ "'"+stu_name+"'" +", " +"'"+stu_sex+"'"+ ", " +"'" +stu_age+ "'"+", " +"'" +class_id+ "'"+ ", " +"'" +stu_class+ "'"+ ")";
         try {
             //加载驱动
             Class.forName(getJDBC_DRIVER());

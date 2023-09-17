@@ -19,7 +19,7 @@ public class st_system {
             System.out.println("请选择端：");
             String input = scanner.nextLine();
             switch (input) {
-                case "1" -> {
+                case "1" :{
                     do {
                         System.out.println("\n1.添加学生信息");
                         System.out.println("2.显示学生信息页面");
@@ -32,66 +32,83 @@ public class st_system {
                         input = scanner.nextLine();
 
                         switch (input) {
-                            case "1" -> {
+                            case "1" :{
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/ /*菜单*/
                                 System.out.println("===============");
                                 System.out.println("=添加学生信息页面=");
                                 System.out.println("===============");
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
                                 AddStudents.addstudent();
+                                break;
                             }//添加学生
-                            case "2" -> {
+                            case "2" : {
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/ /*菜单*/
                                 System.out.print("===============\n");
                                 System.out.print("=显示学生信息页面=\n");
                                 System.out.print("===============\n");
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
                                 //showStudent(WLW);
+                                break;
                             }//显示学生
-                            case "3" -> {
+                            case "3" :{
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/ /*菜单*/
                                 System.out.print("===============\n");
                                 System.out.print("=查询学生信息页面=\n");
                                 System.out.print("===============\n");
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
                                 //findStudent(WLW);//查询学生
+                                break;
                             }
-                            case "4" -> {
+                            case "4" :{
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/ /*菜单*/
                                 System.out.print("===============\n");
                                 System.out.print("=删除学生信息页面=\n");
                                 System.out.print("===============\n");
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
                                 //removeStudent(WLW);//删除学生
+                                break;
                             }
-                            case "5" -> {
+                            case "5" : {
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/ /*菜单*/
                                 System.out.print("===============\n");
                                 System.out.print("=修改学生信息页面=\n");
                                 System.out.print("===============\n");
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
                                 //changeStudent(WLW);//修改学生
+                                break;
                             }
-                            case "6" -> {
+                            case "6" : {
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/ /*菜单*/
                                 System.out.print("===================\n");
                                 System.out.print("=查询学生考试信息页面=\n");
                                 System.out.print("===================\n");
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
                                 // (WLW);//查询学生考试信息
+                                break;
                             }
-                            case "7" -> {
+                            case "7" : {
                                 System.out.println("已退至菜单");
-                            }default -> System.out.println("输出错误，请重新输入！");
+                                break;
+                            } default : {
+                                System.out.println("输出错误，请重新输入！");
+                                break;
+                            }
 
                         }
                     } while (!input.equals("7"));
                 }
-                case "2" -> System.out.println("\n      --系统还未开发--\n\n");
-                case "3" -> {
+                break;
+                case "2" : {
+                    System.out.println("\n      --系统还未开发--\n\n");
+                    break;
+                }
+                case "3" : {
                     return;
                 }
-                default -> System.out.println("输出错误，请重新输入！");
+                default: {
+                    System.out.println("输出错误，请重新输入！");
+                    break;
+                }
             }
         } while (true);
     }
