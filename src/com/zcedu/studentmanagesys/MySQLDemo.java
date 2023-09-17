@@ -85,7 +85,7 @@ public class MySQLDemo {
             ResultSet rs = stmt.executeQuery(sql);//在此方法中传入sql语句以达到执行数据库操作的目的
             // 展开结果集数据库
             while(rs.next()){
-                for (int i = 0; i < row-1; i++) {
+                for (int i = 0; i < row; i++) {
                     System.out.print(rs.getString(columns[i]) + " ");
                 }
             }

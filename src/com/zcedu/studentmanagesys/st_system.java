@@ -17,7 +17,7 @@ public class st_system {
             System.out.println("=3.退出系统                  =");
             System.out.println("=============================");
             System.out.println("请选择端：");
-            String input = scanner.nextLine();
+            String input = scanner.next();
             switch (input) {
                 case "1" :{
                     do {
@@ -29,7 +29,7 @@ public class st_system {
                         System.out.println("6.考试信息查询页面");
                         System.out.println("7.退出系统\n\n");
                         System.out.println("请选择功能：");
-                        input = scanner.nextLine();
+                        input = scanner.next();
 
                         switch (input) {
                             case "1" :{
@@ -42,12 +42,13 @@ public class st_system {
                                 break;
                             }//添加学生
                             case "2" : {
+
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/ /*菜单*/
                                 System.out.print("===============\n");
                                 System.out.print("=显示学生信息页面=\n");
                                 System.out.print("===============\n");
                                 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-                                //showStudent(WLW);
+                                ShowStudents.showStudents();
                                 break;
                             }//显示学生
                             case "3" :{

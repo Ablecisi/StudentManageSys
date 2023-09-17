@@ -40,11 +40,13 @@ private static final String
             //连接数据库
             con = DriverManager.getConnection(DB_URL,DB_USER, DB_PASS);
             switch (clsR){
-                case "AddStudents" :{
-                    System.out.println("请输入学生学号");
+                case "ShowStudents" :{
+                    System.out.println("请输入需查询的学生学号");
                     String st_id = sc.next();
                     //创建sql语句
                     mySQLDemo.select(st_id,"student");
+                    System.out.println();
+                    mySQLDemo.select(st_id,"class");
                     break;
                 }
                 case "b" :{
