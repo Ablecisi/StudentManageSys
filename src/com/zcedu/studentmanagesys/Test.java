@@ -8,6 +8,3 @@ public class Test {
 
     }
 }
-class Cls{
-
-}
