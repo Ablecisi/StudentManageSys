@@ -1,5 +1,10 @@
 package com.zcedu.studentmanagesys;
 
+import com.sun.jdi.Value;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -102,28 +107,43 @@ public class Login {
     }
     public static int login() {
         Scanner scan = new Scanner(System.in);
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         Login log = new Login();
         boolean flag = true;
-        boolean flag2 = true;
         do {
             do {
                 System.out.println("请输入用户名:");
                 String user_name = scan.next();
-//                if (user_name.length() < 8) {
-//                    System.out.println("用户名长度必须大于8");
-//                    break;
-//                }
+                /*if (user_name.length() < 8) {
+                    System.out.println("用户名长度必须大于8");
+                    break;
+                }*/
                 System.out.println("请输入密码:");
-                String password = scan.next();
-//                if (password.length() < 8) {
-//                    System.out.println("密码长度必须大于8");
-//                    break;
-//                }
+                String password = null;
+                //使密码不可见
+
+                    try {
+                        while(flag){
+                            //password = bf.readLine();
+                            password = scan.next();
+                            String ch = password.substring(password.length());
+                            if (ch.isEmpty()) {
+                                break;
+                            }
+                        }
+                    }catch (Exception e){
+                        System.out.println(e.getMessage());
+                }
+
+                /*if (password.length() < 8) {
+                    System.out.println("密码长度必须大于8");
+                    break;
+                }*/
                 log.select(user_name,password);
                 return log.getRow();
-            }while (flag2);
+            }while (true);
             //System.out.println("请重新输入");
-        }while (flag);
+        }while (true);
         //return -1;
     }
 
