@@ -119,7 +119,8 @@ public class Login {
                     break;
                 }*/
                 System.out.println("请输入密码:");
-                String password = null;
+                String password = scan.next();
+                /*String password = null;
                 //使密码不可见
 
                     try {
@@ -133,7 +134,7 @@ public class Login {
                         }
                     }catch (Exception e){
                         System.out.println(e.getMessage());
-                }
+                }*/
 
                 /*if (password.length() < 8) {
                     System.out.println("密码长度必须大于8");

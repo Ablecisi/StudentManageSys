@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Ablecisi" uuid="75ab9e6f-0fc5-4c2a-a3d8-3c84b9d4cb42">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
